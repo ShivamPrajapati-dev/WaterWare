@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffd633"
+    android:layout_height="match_parent"
+    tools:context=".ImageTwo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:lottie_loop="true"
+            android:layout_marginStart="30dp"
+            android:id="@+id/imageTwo"
+            android:layout_centerVertical="true"
+            app:lottie_fileName="glass.json"
+            app:lottie_autoPlay="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="40dp"
+            android:id="@+id/two"
+            android:layout_toEndOf="@id/imageTwo"
+            android:text="Drink clean\nStay healthy"
+            android:textColor="#D50000"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#424242</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:textColorHint">#bdbdbd</item>
+
+        <item name="colorControlActivated">@color/colorPrimary</item>
+
+    </style>
+
+      <style name="FullScreenDialogTheme" parent="Theme.AppCompat.DayNight.DialogWhenLarge">
+
+
+          <item name="android:windowNoTitle">true</item>
+      </style>
+
+    <style name="ssss" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:shape">rectangle</item>
+        <item name="android:radius">1000dp</item>
+        <item name="boxStrokeColor">#000</item>
+        <item name="boxBackgroundMode">outline</item>
+
+    </style>
+
+    
+    <style name="a">
+        <item name="android:textColorSecondary">#ffffff</item>
+    </style>
+
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+
+
+
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

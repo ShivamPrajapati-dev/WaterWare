@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffd633"
+    android:layout_height="match_parent"
+    tools:context=".ImageThree">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:lottie_loop="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/imageThree"
+            android:layout_centerVertical="true"
+            app:lottie_fileName="free.json"
+            app:lottie_autoPlay="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our mission\nSWACH JAL SWACH JEEVAN"
+            android:textSize="18sp"
+            android:textColor="#D50000"
+            android:gravity="center"
+            android:id="@+id/three"
+            android:padding="10dp"
+            android:layout_above="@id/imageThree"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"/>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Write your reviews about this service"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#000"
+        android:textColor="#fff"
+        android:id="@+id/tv"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/qwe"
+        app:layout_constraintTop_toBottomOf="@id/tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Rate this service"
+        android:textColor="#0335ff"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <android.support.v7.widget.AppCompatRatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:stepSize="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qwe"
+        app:layout_constraintStart_toStartOf="parent"
+        android:numStars="5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write a review"
+        android:id="@+id/war"
+        android:textColor="#0335ff"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/review"
+        app:layout_constraintTop_toBottomOf="@id/war" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        app:layout_constraintEnd_toStartOf="@id/idwtr"
+        android:padding="10dp"
+        android:textColor="#0335ff"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginRight="10dp"
+        android:id="@+id/ok"
+        app:layout_constraintTop_toBottomOf="@id/review"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I don't want to rate"
+        app:layout_constraintTop_toBottomOf="@id/review"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:background="?attr/selectableItemBackground"
+        android:textColor="#000"
+        android:id="@+id/idwtr"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

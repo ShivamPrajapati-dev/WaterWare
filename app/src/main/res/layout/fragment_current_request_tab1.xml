@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="#f7f7f7"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CurrentRequestTab1"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipe">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scroll"
+            android:fillViewport="true"
+            android:background="#f7f7f7">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cl">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/autoSliderViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:layout_marginTop="4dp"
+                android:background="#000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/autoSliderViewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabBackground="@drawable/tab_background"
+                app:tabGravity="center"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="0dp" />
+
+
+
+              <com.facebook.shimmer.ShimmerFrameLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/shimmer"
+                  app:layout_constraintTop_toBottomOf="@id/autoSliderViewPager">
+                  <include layout="@layout/loading_animation"/>
+              </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl"
+                android:padding="5dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/autoSliderViewPager">
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/infoCard"
+                    android:layout_alignParentTop="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs 350"
+                            android:textColor="#000"
+                            android:paddingTop="10dp"
+                            android:paddingStart="10dp"
+                            android:textSize="25sp"
+                            android:id="@+id/displayPrice"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:id="@+id/qw"
+                            android:layout_below="@id/displayPrice"
+                            android:textSize="14sp"
+                            android:text="Total price"/>
+
+                        <TextView
+                            android:id="@+id/displayDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:layout_above="@+id/xxxx"
+                            android:layout_alignParentEnd="true"
+
+                            android:padding="10dp"
+                            android:text="Date"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Request Date"
+                            android:textSize="14sp"
+                            android:id="@+id/xxxx"
+                            android:layout_alignParentEnd="true"
+                            android:padding="10dp"
+                            android:layout_below="@id/displayPrice"/>
+
+                        <View
+                            android:layout_width="300dp"
+                            android:layout_height="1dp"
+                            android:id="@+id/qwe"
+                            android:background="#bdbdbd"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/xxxx"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/qwe">
+
+                            <View
+                                android:id="@+id/vieww"
+                                android:layout_width="1dp"
+                                android:layout_height="180dp"
+
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="10dp"
+                                android:background="#bdbdbd" />
+
+                            <ImageView
+                                android:id="@+id/today"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_today_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/pd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@id/today"
+                                android:padding="10dp"
+                                android:text="Preferred Days"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/days"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/pd"
+                                android:layout_toRightOf="@id/today"
+                                android:padding="10dp"
+                                android:text="days" />
+
+                            <ImageView
+                                android:id="@+id/pt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@id/vieww"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_access_time_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/aaa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@id/pt"
+                                android:padding="10dp"
+                                android:text="Preferred Time"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/from"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/pt"
+                                android:layout_toEndOf="@id/vieww"
+                                android:padding="10dp"
+                                android:text="From : "
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/timeFrom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/pt"
+                                android:layout_toEndOf="@id/from"
+                                android:padding="10dp"
+                                android:text="Time" />
+
+                            <TextView
+                                android:id="@+id/to"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/from"
+                                android:layout_toEndOf="@id/vieww"
+                                android:padding="10dp"
+                                android:text="To : "
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/timeTo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/timeFrom"
+                                android:layout_toEndOf="@id/to"
+                                android:padding="10dp"
+                                android:text="Time" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:id="@+id/mmm"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content"
+                                android:text="Make sure your tank is fully empty between the time range."
+                                android:textColor="#D50000"
+                                android:layout_below="@id/timeTo"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/vieww"
+                                android:padding="10dp"/>
+
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/simple"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/infoCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:padding="10dp"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/viewBill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+
+                            android:background="@drawable/text"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="View Bill"
+                            android:textColor="#335bff"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/cancelREquest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/viewBill"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="30dp"
+                            android:background="@drawable/button"
+                            android:padding="10dp"
+                            android:text="Cancel Request"
+                            android:textColor="#fff"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.CardView>
+                
+
+                
+
+            </RelativeLayout>
+
+
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/autoSliderViewPager">
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="3"
+                    android:rowCount="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/click"
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:src="@drawable/click" />
+
+                    <ImageView
+                        android:id="@+id/mail"
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:src="@drawable/mail" />
+
+                    <ImageView
+                        android:id="@+id/cleaner"
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:layout_row="0"
+                        android:layout_column="2"
+                        android:src="@drawable/cleaner" />
+
+                    <TextView
+                        android:id="@+id/one"
+                        android:layout_width="120dp"
+                        android:layout_height="123dp"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Tap below button\n for\n water tank service" />
+
+                    <TextView
+                        android:id="@+id/two"
+                        android:layout_width="120dp"
+                        android:layout_height="72dp"
+                        android:layout_row="1"
+                        android:padding="10dp"
+                        android:layout_column="1"
+                        android:gravity="center"
+                        android:text="We receive your\n request" />
+
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="120dp"
+                        android:layout_height="122dp"
+                        android:layout_row="1"
+                        android:layout_column="2"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Shortly, our water tank cleaners \nwill be at your \n service" />
+
+
+                </GridLayout>
+            </android.support.constraint.ConstraintLayout>
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/round"
+                android:text="Create Request"
+                android:textColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                app:layout_constraintVertical_bias="0.153" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="You can tap on the above button to create  your water tank cleaning request"
+                android:textColor="#424242"
+                android:textSize="18sp"
+                ads:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</android.support.constraint.ConstraintLayout>
