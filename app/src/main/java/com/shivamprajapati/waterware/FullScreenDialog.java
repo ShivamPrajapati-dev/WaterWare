@@ -204,7 +204,7 @@ public class FullScreenDialog extends DialogFragment implements View.OnClickList
 
 
 
-        FirebaseDatabase.getInstance().getReference().child("AdminNameHere").child("Bill").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("AnoopKumarPrajapti").child("Bill").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
